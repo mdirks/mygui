@@ -1,0 +1,20 @@
+<persistence package="mygui">
+
+        <class name="PObjectGraphicsItem" tname="pobjectgraphicsitem" version="0.6">
+                <reference name="Object" refClass="orm/persistence/PObject" getter="getObject"></reference>
+		<property name="x"  type="double" cname="xpos" ctype="real" getter="x" setter="setX"></property>
+		<property name="y"  type="double" cname="ypos" ctype="real" getter="y" setter="setY"></property>
+                <property name="z"  type="double" cname="zpos" ctype="real" getter="z" setter="setZValue"></property>
+		<property name="width"  type="int" cname="width" ctype="integer" getter="width" setter="setWidth"></property>
+		<property name="height"  type="int" cname="height" ctype="integer" getter="height" setter="setHeight"></property>
+		<property name="Color"  type="int" cname="color" ctype="integer" getter="getColor" setter="setColor"></property>
+	</class>
+	
+        <class name="GenericMap" tname="genericmap" version="0.3">
+                <association name="GraphicsItems" table="map_item" priCol="map_id" ascCol="item_id" ascClass="PObjectGraphicsItem" getter="getGraphicsItems"></association>
+	</class>
+	
+        <class name="GuiObject" tname="guiobject"  version="0.1">
+                <reference name="DashBoard" refClass="GenericMap"></reference>
+	</class>
+</persistence>
