@@ -119,7 +119,8 @@ SOURCES += mygui.cpp \
     rootitem.cpp \
     xmlfactory.cpp \
     standardguimode.cpp \
-    formarea.cpp
+    formarea.cpp \
+    movieplayer.cpp
 
 HEADERS += mygui.h\
         mygui_global.h \
@@ -214,7 +215,8 @@ HEADERS += mygui.h\
     rootitem.h \
     xmlfactory.h \
     standardguimode.h \
-    formarea.h
+    formarea.h \
+    movieplayer.h
 
 unix {
     target.path = /usr/lib

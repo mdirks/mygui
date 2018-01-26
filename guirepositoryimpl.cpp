@@ -262,7 +262,7 @@ void GuiRepositoryImpl::showCentralWidget(QWidget *w)
 
 }
 
-void GuiRepositoryImpl::registerVideoWidget(QVideoWidget *vw)
+void GuiRepositoryImpl::registerMoviePlayer(MoviePlayer *vw)
 {
     videow=vw;
 }
@@ -272,13 +272,8 @@ void GuiRepositoryImpl::registerVideoWidget(QVideoWidget *vw)
 void GuiRepositoryImpl::showMovie(QString movieFile)
 {
     if(videow){
-        if(!player){
-            player = new QMediaPlayer();
-        }
-        player->setMedia(QUrl::fromLocalFile(movieFile));
-        player->setVideoOutput(videow);
+        videow->show(movieFile);
 
-        player->play();
     }
 }
 

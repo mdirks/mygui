@@ -36,7 +36,7 @@ public:
     PObjectIconViewItemBase(PObject *o, QListWidget *iv);
     ~PObjectIconViewItemBase();
     PObject* getObject();
-    virtual void activateItem();
+    virtual void activateItem()=0;
     virtual void showFull(bool full){};
 
 protected:
@@ -64,6 +64,8 @@ class PObjectIconViewItem : public PObjectIconViewItemBase
 public:
     PObjectIconViewItem(PObject *o, QListWidget *iv, QPixmap &icon, RepositoryProperty *displayProp=0);
     ~PObjectIconViewItem();
+
+    virtual void activateItem();
 };
 
 class PObjectIconViewItemE : public QObject, public PObjectIconViewItemBase
@@ -72,6 +74,8 @@ class PObjectIconViewItemE : public QObject, public PObjectIconViewItemBase
 public:
     PObjectIconViewItemE(PObject *o, list<RepositoryProperty*> *listRp, QListWidget *iv, QPixmap &icon);
     ~PObjectIconViewItemE();
+
+    virtual void activateItem();
 
     //void setDisplayProperty(RepositoryProperty *p);
     void showFull(bool full);

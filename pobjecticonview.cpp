@@ -129,8 +129,8 @@ void PObjectIconView::doCommonSetup()
     this->prevWidget=0;
     this->displayPropList=0;
 
-    this->itemTemplate=GuiRepository::getInstance()->getPObjectIconViewItemTemplate(clName,this);
-
+    //this->itemTemplate=GuiRepository::getInstance()->getPObjectIconViewItemTemplate(clName,this);
+    this->itemTemplate=0;
 
     isLoaded=false;
 
@@ -223,6 +223,7 @@ void PObjectIconView::setTableView(PObjectTable *table)
 void PObjectIconView::setItemTemplate(PObjectIconViewItemTemplate *t)
 {
     itemTemplate=t;
+    reload();
 }
 
 

@@ -30,6 +30,7 @@
 #include "guiservice.h"
 #include "splashscreen.h"
 #include "guimainwindow.h"
+#include "movieplayer.h"
 
 //#include <kglobal.h>
 //#include <KConfig>
@@ -85,7 +86,7 @@ public:
    virtual QToolBar* getGlobalToolbar()=0;
 
     virtual void showMovie(QString movieFile)=0;
-    virtual void registerVideoWidget(QVideoWidget *vw)=0;
+    virtual void registerMoviePlayer(MoviePlayer *vw)=0;
 
     virtual PObjectIconViewItemTemplate* getPObjectIconViewItemTemplate(QString clName,QListWidget *lv)=0;
     virtual void registerPObjectIconViewItemTemplate(QString clName, PObjectIconViewItemTemplate *it)=0;

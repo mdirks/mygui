@@ -37,6 +37,7 @@
 #include "guicontroler.h"
 #include "guimode.h"
 #include "guimainwindow.h"
+#include "movieplayer.h"
 
 #include <QDialog>
 #include <QMediaPlayer>
@@ -69,7 +70,7 @@ public:
     void setFormWorkspace(QMdiArea *w);
 
     void showMovie(QString movieFile);
-    void registerVideoWidget(QVideoWidget *vw);
+    void registerMoviePlayer(MoviePlayer *vw);
 
     void setGraphicsView(QGraphicsView *GraphicsView);
     void initGui();
@@ -87,20 +88,7 @@ public:
 
     QStackedWidget* getCentralWidget();
     void setCentralWidget(QStackedWidget *sw);
-  /*	
-     QPixmap loadIcon(QString iconName, KIcon::Group group=KIcon::Desktop);
-     QPixmap getIcon(PObject *o, KIcon::Group group=KIcon::Small);
-     QPixmap getIcon(QString name, KIcon::Group group=KIcon::Small);
-     QPixmap getIcon(RepositoryProperty *rp, KIcon::Group group=KIcon::Small);
-     
-     void selectIcon(QString name);
-     void selectIcon(PObject *o);
-     void selectIcon(RepositoryProperty *rp);
-    */
-    /*
-     void addActiveEditor(PropertyEditor *editor);
-     void stopEdit();
-    */
+
     /*KXmlGuiWindow*/ GuiMainWindow* getMainFrame();
     void setMainFrame(/*KXmlGuiWindow*/ GuiMainWindow *mf);
     //stundenplan* getActiveStundenplan();
@@ -150,8 +138,8 @@ private:
      //stundenplan *activeplan;
      list<PObjectIconView*> *activeIconViews;
      GuiMode *activeMode;
-     QVideoWidget *videow;
-     QMediaPlayer *player;
+     MoviePlayer *videow;
+
 
 protected:
     QGraphicsView* GraphicsView;

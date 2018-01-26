@@ -46,10 +46,17 @@ PObjectIconViewItem::PObjectIconViewItem(PObject *o, QListWidget *iv, QPixmap &i
     this->setIcon(icon);
 }
 
-void PObjectIconViewItemBase::activateItem()
+void PObjectIconViewItem::activateItem()
 {
     GuiRepository::getInstance()->showFormForObject(getObject());
 }
+
+
+void PObjectIconViewItemE::activateItem()
+{
+    GuiRepository::getInstance()->showFormForObject(getObject());
+}
+
 
 PObjectIconViewItem::~PObjectIconViewItem()
 {
