@@ -16,6 +16,7 @@ void MoviePlayer::show(QString movieFile)
         player->setVideoOutput(this);
         player->play();
         ispaused=false;
+        isfs=false;
     } else {
         player->stop();
     }
@@ -33,6 +34,10 @@ void MoviePlayer::keyPressEvent(QKeyEvent *ev)
         player->setPosition(player->position()-500000);
     }else if(ev->key()==Qt::Key_Space){
         switchplay();
+        //player->setPosition(player->position()-500000);
+    }else if(ev->key()==Qt::Key_F){
+        switchfullscreen();
+        qDebug()<<"switched fs";
         //player->setPosition(player->position()-500000);
     } else {
         QVideoWidget::keyPressEvent(ev);
@@ -55,5 +60,21 @@ void MoviePlayer::switchplay()
     } else {
         player->pause();
         ispaused=true;
+    }
+}
+
+void MoviePlayer::stop()
+{
+    player->stop();
+}
+
+void MoviePlayer::switchfullscreen()
+{
+    if(!isfs){
+        setFullScreen(true);
+        isfs=true;
+    } else {
+        setFullScreen(false);
+        isfs=false;
     }
 }

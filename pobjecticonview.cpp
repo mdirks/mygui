@@ -279,7 +279,7 @@ PObject* PObjectIconView::getCurrent()
     PObject *o = 0;
     QListWidgetItem *item = QListWidget::currentItem();
     if(item){
-        PObjectIconViewItem *pitem = dynamic_cast<PObjectIconViewItem*>(item);
+        PObjectIconViewItemBase *pitem = dynamic_cast<PObjectIconViewItemBase*>(item);
         if(pitem){
             o = pitem -> getObject();
         }

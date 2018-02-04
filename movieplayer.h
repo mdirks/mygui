@@ -10,6 +10,7 @@ class MoviePlayer : public QVideoWidget
 public:
     MoviePlayer(QWidget *p);
     void show(QString movieFile);
+    void stop();
 
 protected:
     void keyPressEvent(QKeyEvent *event);
@@ -17,11 +18,12 @@ protected:
 
 private:
     void switchplay();
-
+    void switchfullscreen();
 
 private:
     QMediaPlayer *player;
-    bool ispaused;
+    bool ispaused,isfs;
+    QWidget *parent;
 };
 
 #endif // MYPLAYER_H

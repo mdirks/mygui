@@ -88,6 +88,7 @@ GuiMainWindow::GuiMainWindow(QWidget* , const char* name): KXmlGuiWindow() /*QMa
   //initDocument();
 
   globalTb = new QToolBar("global",this);
+  addToolBar(globalTb);
   QAction *action= actionCollection()->addAction("add_objectview", this, SLOT(slotNewObjectIconView()));
   action->setIcon(GuiConfig::getInstance()->getIcon("objectview"));
   action->setText("Objektbrowser");
